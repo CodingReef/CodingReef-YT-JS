@@ -1,0 +1,16 @@
+{
+  "name": "express-file-upload",
+  "version": "1.0.0",
+  "description": "Easiest Way to upload file from client side to server side in express",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Coding Reef",
+  "license": "MIT"
+}

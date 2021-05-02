@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" id="file">
+    <button onclick="sendFile()">Send File</button>
+    <script>
+        function sendFile(){
+            const file = document.getElementById('file').files[0];
+            const reader = new FileReader();
+            reader.addEventListener('load', ()=>{
+                var res = reader.result;
+                res = encodeURIComponent(res);
+                var xml = new XMLHttpRequest();
+                xml.open('POST', '/post');
+                xml.setRequestHeader('Content-type', 'application/json');
+                xml.send(JSON.stringify({data: res, fileName: file.name}))
+            });
+            if(file){
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>
