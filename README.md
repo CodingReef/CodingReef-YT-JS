@@ -9,7 +9,7 @@
    - create a folder `Uploads`
 
  ## To Run
-  -node server.js
+  - node server.js
 
  If you have any Issue feel free to create a new Issue in this branch
  
